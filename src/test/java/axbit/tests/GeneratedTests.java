@@ -17,10 +17,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class GeneratedTests extends TestBase {
 
-//    String city = "г Москва",
-//            carPower = "120",
-//            numberOfDrivers = "1 и более";
-
     String phone = "+74954141404",
             devType1 = "Web-разработка",
             devType2 = "Мобильная разработка",
@@ -33,80 +29,86 @@ public class GeneratedTests extends TestBase {
     static final String BASE_URL = "https://axbit.ru/";
 
     @Test
-    @DisplayName("Открытие и проверка телефона на главной странице")
-    void generatedTest() {
+    @DisplayName("Открытие главной страницы")
+    void generatedTest00() {
         step("Открыть главную страницу 'https://axbit.ru/'", () -> {
             open(BASE_URL);
         });
+
+        step("Проверить наличие контактного телефона", () -> {
+            $(".phone-block").shouldHave(text(phone));
+        });
     }
-//        step("Проверить наличие контактного телефона", () -> {
-//
-//            $(".phone-block with_btn pull-right").shouldHave(text(phone));
-//
-//        });
-//    }
 
-//    @Test
-//    @DisplayName("Page title should have header text")
-//    void titleTest() {
-//        step("Open url 'https://bip.ru/'", () ->
-//                open(BASE_URL));
-//
-//        step("Page title should have text 'Купить ОСАГО онлайн на 🚙 bip.ru'", () -> {
-//            String expectedTitle = "Купить ОСАГО онлайн на 🚙 bip.ru";
-//            String actualTitle = title();
-//
-//            assertThat(actualTitle).isEqualTo(expectedTitle);
-//        });
-//    }
-//
-//    @Test
-//    @DisplayName("Тест сервиса 'Калькулятор ОСАГО'")
-//    void menuTest() {
-//        step("Тест сервиса 'Калькулятор ОСАГО'", () -> {
-//            open(BASE_URL);
-//            $(".HeaderNavigation_content__24XmP").shouldHave(Condition.text("Калькулятор ОСАГО")).click();
-//            $(".InputSelect_dropdown__386hc", 0).click();
-//            $(".Input_field__2Zdfy", 0).val(city);
-//            $(".InputSelect_arrow__xf645", 0).click();
-//            $(".InputSelect_dropdown__386hc", 1).click();
-//            $(".Input_field__2Zdfy", 1).val(carPower);
-//            $(".InputSelect_arrow__xf645", 1).click();
-//            $(".Input_field__2Zdfy", 2).val(numberOfDrivers);
-//            $(".InputSelect_arrow__xf645", 2).click();
-//        });
-//    }
-//
-//    @Test
-//    @DisplayName("Тест сервиса 'Коэффициенты ОСАГО'")
-//    void testCoefficients() {
-//        step("Тест сервиса 'Коэффициенты ОСАГО'", () -> {
-//            open(BASE_URL + "osago");
-//            $("#base").shouldHave(Condition.text("Базовая ставка"));
-//        });
-//    }
-//
-//    @Test
-//    @DisplayName("Тест сервиса 'Карта штрафов ГИБДД'")
-//    void testShtrafyOsagoMap() {
-//        step("Тест сервиса 'Карта штрафов ГИБДД'", () -> {
-//            open(BASE_URL + "shtrafy-osago-map");
-//            $(".LandingHeader_contentBlock__3aU9J").shouldHave(Condition.text("Карта штрафов ГИБДД — Москва"));
-//
-//        });
-//    }
+    @Test
+    @DisplayName("Поиск раздела Web-разработка")
+    void generatedTest01() {
+        step("Открыть главную страницу 'https://axbit.ru/'", () -> {
+            open(BASE_URL);
+        });
 
-//    @Test
-//    @DisplayName("Page console log should not have errors")
-//    void consoleShouldNotHaveErrorsTest() {
-//        step("Open url 'https://bip.ru/'", () ->
-//                open("https://bip.ru/"));
-//
-//        step("Console logs should not contain text 'SEVERE'", () -> {
-//            String consoleLogs = DriverUtils.getConsoleLogs();
-//            String errorText = "SEVERE";
-//
-//            assertThat(consoleLogs).doesNotContain(errorText);
-//        });
-//    }
+        step("Проверить наличие раздела Web-разработка", () -> {
+            $(".col-md-9").shouldHave(text(devType1));
+        });
+    }
+
+    @Test
+    @DisplayName("Поиск раздела Мобильная разработка")
+    void generatedTest02() {
+        step("Открыть главную страницу 'https://axbit.ru/'", () -> {
+            open(BASE_URL);
+        });
+
+        step("Проверить наличие раздела Мобильная-разработка", () -> {
+            $(".col-md-9").shouldHave(text(devType2));
+        });
+    }
+
+    @Test
+    @DisplayName("Поиск раздела Техническая поддержка")
+    void generatedTest03() {
+        step("Открыть главную страницу 'https://axbit.ru/'", () -> {
+            open(BASE_URL);
+        });
+
+        step("Проверить наличие раздела Техническая поддержка", () -> {
+            $(".col-md-9").shouldHave(text(devType3));
+        });
+    }
+
+    @Test
+    @DisplayName("Поиск раздела Битрикс24")
+    void generatedTest04() {
+        step("Открыть главную страницу 'https://axbit.ru/'", () -> {
+            open(BASE_URL);
+        });
+
+        step("Проверить наличие раздела Битрикс24", () -> {
+            $(".col-md-9").shouldHave(text(devType4));
+        });
+    }
+
+    @Test
+    @DisplayName("Поиск раздела Заказная разработка")
+    void generatedTest05() {
+        step("Открыть главную страницу 'https://axbit.ru/'", () -> {
+            open(BASE_URL);
+        });
+
+        step("Проверить наличие раздела Заказная разработка", () -> {
+            $(".col-md-9").shouldHave(text(devType5));
+        });
+    }
+
+    @Test
+    @DisplayName("Поиск раздела SharePoint")
+    void generatedTest06() {
+        step("Открыть главную страницу 'https://axbit.ru/'", () -> {
+            open(BASE_URL);
+        });
+
+        step("Проверить наличие раздела SharePoint", () -> {
+            $(".col-md-9").shouldHave(text(devType6));
+        });
+    }
 }
